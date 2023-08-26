@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  padding: 10px 20px;
+  background: #051124;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+}
+
+.container {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  width: 200px;
+  height: 60px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* chart head */
+
+.header .header-inner .form {
+  display: flex;
+  gap: 20px;
+}
+
+.form .country,
+.sector,
+.subsector,
+.indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #fff;
+}
+
+
+.country .country-container,
+.sector .sector-container,
+.subsector .subsector-container,
+.indicator .indicator-container {
+  display: flex;
+  width: 170px;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 7px;
+  cursor: pointer;
+  position: relative;
+  padding-left: 10px;
+  scroll-behavior: smooth;
+  background: #293F64;
+}
+
+.subsector .subsector-container {
+  width: 300px;
+}
+
+.country .country-container .country-head {
+  overflow-x: scroll;
+  display: flex;
+  scroll-behavior: smooth;
+  gap: 4px;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.country .country-container .country-head:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+  cursor: zoom-in;
+}
+
+.country-head .item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #A7B4CA transparent;
+  height: 20px;
+  padding: 0 10px;
+}
+
+.item .remove {
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.country .country-container .country-head::-webkit-scrollbar {
+  appearance: none;
+  display: none;
+}
+
+.indicator .indicator-container {
+  width: 300px;
+  font-size: 14px;
+}
+
+.country-container .country-subbox .subbox .box-item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.subsector-container .subsector-head,
+.indicator-container .indicator-head {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+.country .country-btn,
+.sector .sector-btn,
+.subsector .subsector-btn,
+.indicator .indicator-btn {
+  border-left: 1px solid #4A628A;
+}
+
+.country .country-btn,
+.sector .sector-btn,
+.subsector .subsector-btn,
+.indicator .indicator-btn,
+button {
+  width: 40px;
+  height: 38px;
+  background: none;
+  border-radius: 7px;
+  border: none;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.country-container .subbox-container,
+.sector-container .subbox-container,
+.subsector-container .subbox-container,
+.indicator-container .subbox-container {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  /* /* width: 178px; */
+  width: 0;
+  height: 0;
+  /* height: 200px;  */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* display: none; */
+  /* visibility: hidden; */
+  opacity: 0;
+  background: #293F64;
+  color: #fff;
+  transition: all 0.3s ease-in;
+  border-radius: 7px;
+}
+
+.subbox-container::-webkit-scrollbar {
+  display: none;
+}
+
+.subbox-container::-webkit-scrollbar-thumb {
+  background: #4A628A;
+  display: none;
+}
+
+.subbox-container.active-subbox {
+  /* display: block; */
+  /* visibility: visible; */
+  /* width: 178px; */
+  opacity: 1;
+  width: 100%;
+  height: 200px;
+  transition: all 0.3s ease-in;
+}
+
+.subbox-container .subbox .box-item {
+  padding: 5px 10px;
+  width: 100%;
+  border-bottom: 1px solid #4A628A;
+}
+
+/* main section */
+
+.main {
+  margin-top: 100px;
+}
+
+.main .main-inner {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+}
+
+.main-inner .chart-head {
+  padding: 30px;
+  background: #0D1F3D;
+  width: 100%;
+  color: #A7B4CA;
+}
+
+.chart-head .chart-head-text {
+  font-weight: 600;
+  line-height: 21px;
+  font-size: 16px;
+}
+
+.main-inner .chart {
+  background: #051124;
+  width: 100%;
+  color: #fff;
+  box-shadow: 0px 10px 7px 8px #86868610;
+  height: 700px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;align-self: center;
+}
+
+.chart #bumpChart {
+  transition: all 0.3s ease-in-out;
+}
